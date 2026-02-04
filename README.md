@@ -65,10 +65,8 @@ class MNISTNet(nn.Module):
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
         x = self.fc3(x)
-        return x  # logits
+        return F.softmax(x, dim=1)
 ```
-
-* Optional for probability output: `F.softmax(x, dim=1)` in forward method.
 
 ---
 
