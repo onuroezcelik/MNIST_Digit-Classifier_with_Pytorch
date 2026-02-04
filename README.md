@@ -43,6 +43,36 @@ transform = transforms.Compose([
 
 ### 3. Neural Network Architecture
 
+Input: 28x28 grayscale image
+        │
+        ▼
+  ┌─────────────┐
+  │  Flatten    │
+  │ 28*28=784   │
+  └─────────────┘
+        │
+        ▼
+  ┌─────────────┐
+  │ Fully Conn. │
+  │ 784 → 128   │
+  └─────────────┘
+        │ ReLU
+        ▼
+  ┌─────────────┐
+  │ Fully Conn. │
+  │ 128 → 64    │
+  └─────────────┘
+        │ ReLU
+        ▼
+  ┌─────────────┐
+  │ Fully Conn. │
+  │ 64 → 10     │
+  └─────────────┘
+        │
+        ▼
+Output: probabilities for 10 classes (0-9)
+
+
 * **Fully connected network** with **2 hidden layers**:
 
   * `fc1`: 784 → 128
