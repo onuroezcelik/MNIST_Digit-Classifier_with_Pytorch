@@ -43,12 +43,13 @@ transform = transforms.Compose([
 
 ### 3. Neural Network Architecture
 
+```
 Input: 28x28 grayscale image
         │
         ▼
   ┌─────────────┐
   │  Flatten    │
-  │ 28*28=784   │
+  │ 28*28=784   │ (Flatten layer converts 28x28 images into 784-dimensional vectors)
   └─────────────┘
         │
         ▼
@@ -56,13 +57,13 @@ Input: 28x28 grayscale image
   │ Fully Conn. │
   │ 784 → 128   │
   └─────────────┘
-        │ ReLU
+        │ ReLU (Activation function: ReLU for hidden layers)
         ▼
   ┌─────────────┐
   │ Fully Conn. │
   │ 128 → 64    │
   └─────────────┘
-        │ ReLU
+        │ ReLU (Activation function: ReLU for hidden layers)
         ▼
   ┌─────────────┐
   │ Fully Conn. │
@@ -71,15 +72,13 @@ Input: 28x28 grayscale image
         │
         ▼
 Output: probabilities for 10 classes (0-9)
-
+```
 
 * **Fully connected network** with **2 hidden layers**:
 
   * `fc1`: 784 → 128
   * `fc2`: 128 → 64
   * `fc3`: 64 → 10 (output classes)
-* **Activation function:** ReLU for hidden layers
-* **Flatten layer** converts 28x28 images into 784-dimensional vectors.
 
 ```python
 class MNISTNet(nn.Module):
