@@ -1,4 +1,4 @@
-# MNIST Classification with PyTorch
+# MNIST Digit Classifier with Pytorch
 
 ## Project Overview
 
@@ -138,12 +138,4 @@ These adjustments helped achieve **>90% classification accuracy**, meeting proje
   ```python
   torch.save(model.state_dict(), "mnist_model.pth")
   ```
-* Load model later:
-
-  ```python
-  model = MNISTNet()
-  model.load_state_dict(torch.load("mnist_model.pth"))
-  model.eval()
-  ```
-
 ---
